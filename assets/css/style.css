@@ -1,0 +1,27 @@
+body {
+	background-color: #ffffff;
+	text-align: left;
+}
+
+#game {
+	background-image: url(../images/psychic.jpg);
+	background-repeat: no-repeat;
+	/*width: 600px;*/
+	height: 800px;
+	background-size: contain;
+
+}
+
+#game h1 {
+	padding-left: 50%;
+	padding-top: 50px;
+	font-family: 'Chelsea Market', cursive;
+
+}
+
+#game h3 {
+	padding-left: 50%;
+	font-family: 'Walter Turncoat', cursive;
+
+}
+
