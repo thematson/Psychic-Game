@@ -28,7 +28,7 @@ function resetStats () {
 	guessesMade = [];
 	computerGuess = options[Math.floor(Math.random()*options.
 		length)];
-
+	console.log("reset called");
 }
 //actual game place starts when a key is pressed and released
 document.onkeyup = function() {
@@ -38,24 +38,27 @@ document.onkeyup = function() {
 		console.log(userguess);
 	
 		console.log(computerGuess);
+		guessesMade.push(userguess);
+		guessesLeft--;
+		
 
 //adds a win when user guesses the same as computer stats are reset via function
-		if (userguess==computerGuess) {
+		if (userguess == computerGuess) {
 			wins++;
-			resetStats();
+			resetStats();	
 		}
+
 
 //everytime user guesses wrong, guesses left decreases by 1 and the guess is pushed into the guessesMade array
 		if (userguess !== computerGuess) {
-			if (guessesLeft>1) {
-			guessesLeft--;
-			guessesMade.push(userguess);
-			}
-//when zero guesses left, losses increase by one, and game resets
-			else {
+				
+			if (guessesLeft < 1) {
 				losses++;
 				resetStats();
+			
 			}
+//when zero guesses left, losses increase by one, and game resets
+			
 			}
 	
 	
